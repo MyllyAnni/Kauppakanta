@@ -10,19 +10,20 @@ class Program
         while (true)
         {
             Console.WriteLine("Haluatko lisätä tuotteen (L), hakea (H) vai lopettaa (X)?");
-            string? vastaus = Console.RaéadLine();
-            switch(vastaus)
+            string? vastaus = Console.ReadLine();
+            switch (vastaus)
+            {
 
-            case "L":
-                Console.WriteLine("Anna tuotteen nimi:");
-                string? nimi = Console.ReadLinew(); 
+                case "L":
+                    Console.WriteLine("Anna tuotteen nimi:");
+                    string? nimi = Console.ReadLine();
 
-                Console.WriteLine("Mikä sen tuotteen hinta on?");
-                double hinta = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Mikä sen tuotteen hinta on?");
+                    double hinta = Convert.ToDouble(Console.ReadLine());
 
-                // Lisätään tuote.
-                kauppaDB.LisaaTuoe(nimi, hinta);
-                break;
+                    // Lisätään tuote.
+                    kauppaDB.LisaaTuote(nimi, hinta);
+                    break;
 
                 case "H":
                     // Hae tuote tietokannasta.
@@ -35,9 +36,11 @@ class Program
 
                 case "X":
                     return;
-            default:
-                Console.WriteLine("Väärä valinta. aNNA L, H tai X.");
-                break;
+
+                default:
+                    Console.WriteLine("Väärä valinta. Anna L, H tai X.");
+                    break;
+            }
         }
     }
 }
