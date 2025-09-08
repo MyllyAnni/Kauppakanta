@@ -2,10 +2,8 @@
 
 namespace KauppakantaTunnilla;
 
-class Program
+public class KauppaDB
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello, World!");
-    }
+    private string _connetctionstring = "Data Source = kauppa.db";
+    
 }
